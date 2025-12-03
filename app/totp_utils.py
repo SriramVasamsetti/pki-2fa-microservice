@@ -1,4 +1,5 @@
 import pyotp
+import base64
 import binascii
 
 def hex_to_base32(hex_seed: str) -> str:
@@ -7,7 +8,7 @@ def hex_to_base32(hex_seed: str) -> str:
         # Convert hex string to bytes
         seed_bytes = binascii.unhexlify(hex_seed)
         # Base32 encode (pyotp expects base32)
-        return pyotp.utils.b32encode(seed_bytes).decode('utf-8')
+        return base64.b32encode(seed_bytes).decode('utf-8')
     except Exception as e:
         raise ValueError(f"Invalid hex seed: {e}")
 
