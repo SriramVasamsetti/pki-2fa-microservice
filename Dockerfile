@@ -29,7 +29,7 @@ ENV TZ=UTC
 COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
 
 # Copy application code
-COPY app/ ./app/
+COPY app /app/app
 COPY scripts/ ./scripts/
 COPY cron/2fa-cron /etc/cron.d/2fa-cron
 
