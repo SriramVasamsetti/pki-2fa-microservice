@@ -6,6 +6,8 @@ services:
       - "8080:8080"
     environment:
       - TZ=UTC
+      - STUDENT_PRIVATE_PEM=/app/keys/student_private.pem
+      - INSTRUCTOR_PUBLIC_PEM=/app/keys/instructor_public.pem
     volumes:
       - seed-data:/data
       - cron-output:/cron

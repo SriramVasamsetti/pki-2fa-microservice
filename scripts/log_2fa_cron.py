@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import sys
+sys.path.insert(0, "/app")
 from datetime import datetime, timezone
 from app.crypto_utils import read_seed_from_file
 from app.totp_utils import generate_totp_code
