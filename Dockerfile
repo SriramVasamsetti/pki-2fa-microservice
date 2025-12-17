@@ -42,5 +42,9 @@ RUN mkdir -p /data /cron
 # Expose port for API
 EXPOSE 8080
 
+# Copy entrypoint script
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
 # Start cron daemon and FastAPI app
-CMD cron && exec python -m uvicorn app.main:app --host 0.0.0.0 --port 8080
+ENTRYPOINT ["/app/entrypoint.sh"]
