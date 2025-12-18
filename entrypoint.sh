@@ -7,4 +7,4 @@ service cron start
 
 # Start FastAPI server
 echo "Starting FastAPI server..."
-exec python -m uvicorn app.main:app --host 0.0.0.0 --port 8080
+exec python -m uvicorn app:app --host 0.0.0.0 --port 8080
